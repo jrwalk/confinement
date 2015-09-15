@@ -20,13 +20,18 @@ sql = SQLpull("mode='IMODE'")                                                   
 aug1 = r.read('/home/jrwalk/ryter/imode_sbset_d_iaea14.csv',mode='I',quiet=True)     # AUG data
 aug2 = r.read('/home/jrwalk/ryter/imode_sbset_d_iaea14.csv',mode='IH',quiet=True)   # include IH threshold
 #aug = r.concat(aug1,aug2)
-aug=aug1
+#aug=aug1
+aug=aug2
 
 # mask out obviously bad values of Prad
 mr = np.where(np.logical_and(revB.prad > 0,revB.prad < 2))[0]
 revB = revB[mr]
 mf = np.where(np.logical_and(forB.prad > 0,forB.prad < 2))[0]
 forB = forB[mf]
+
+# mask out low-Bt AUG data?
+mb = np.where(abs(aug.BT) < 2.1)[0]
+aug=aug[mb]
 
 # wrapper functions
 def tau_imode(Ip,Bt,nebar,R,epsilon,Ploss):

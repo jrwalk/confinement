@@ -6,7 +6,8 @@ import buildImodeDBs as b
 import readAUGdb as r
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import powerlaw as pl
+
+import scaling.powerlaw.powerlaw as pl
 
 mpl.rc('text',usetex=True)
 mpl.rc('text.latex')

@@ -5,9 +5,10 @@ from SQLpull import *
 import buildImodeDBs as b
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import powerlaw as pl
-import powerlaw_fixedsize as plf
-import powerlaw_fixedsize_Lmode as plfl
+
+import scaling.powerlaw.powerlaw as pl
+import scaling.powerlaw.fixedsize as plf
+import scaling.powerlaw.fixedsize_Lmode as plfl
 
 #mpl.rc('text',usetex=True)
 #mpl.rc('text.latex',preamble= r'\usepackage[lf]{Myriad}')
